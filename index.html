@@ -7,7 +7,7 @@
     <style>
         @import url('https://fonts.google.com/share?selection.family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900|Montserrat:ital,wght@0,100..900;1,100..900|Roboto:ital,wght@0,100..900;1,100..900');
         
-        :root {
+             :root {
             --vermelho: #ff0033;
             --vermelho-escuro: #cc0029;
             --preto: #111111;
@@ -100,7 +100,7 @@
         /* Contador de dias de amor */
         .love-counter {
             background-color: rgba(255, 0, 51, 0.1);
-            padding: 10px;
+            padding: 12px;
             border-radius: 10px;
             margin: 15px auto;
             text-align: center;
@@ -112,7 +112,7 @@
         .love-counter span {
             color: var(--vermelho);
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
         }
         
         /* MENU INTERATIVO */
@@ -481,7 +481,7 @@
         <h1 id="dynamicTitle">Para Você, Meu Amor</h1>
         <p id="dynamicSubtitle">Um site feito com todo o meu carinho</p>
         <div class="love-counter">
-            <p>Te amo há <span id="loveDaysCounter">carregando...</span></p>
+            <p>❤️ Te amo há <span id="loveCounter">calculando...</span> ❤️</p>
         </div>
     </div>
     
@@ -515,7 +515,6 @@
             
             <div class="interactive-box">
                 <h2 style="color: var(--vermelho); text-align: center; margin-bottom: 15px;">Todas nossa lembrança fav!❤️</h2>
-                <!-- Removi o contador antigo de dias aqui -->
             </div>
         </div>
         
@@ -652,7 +651,7 @@
             herName: "Darc Kaline",
             yourName: "Kauã Seu Lindo",
             secretCode: "my black is cat",
-            loveStartDate: "03/06/2023", // Data de início do relacionamento (06/03/2023)
+            loveStartDate: "06/03/2023", // Data de início do relacionamento (06/03/2023)
             reasons: [
                 "Seu sorriso ilumina meu dia",
                 "Você me faz ser uma pessoa melhor",
@@ -673,7 +672,30 @@
                 "minha princesaaa"
             ]
         };
-        
+
+        // FUNÇÃO QUE CALCULA O TEMPO DE RELACIONAMENTO
+        function updateLoveTime() {
+            const startDate = new Date(config.loveStartDate.split('/').reverse().join('-'));
+            const now = new Date();
+            const diff = now - startDate;
+            
+            const totalSeconds = Math.floor(diff / 1000);
+            const days = Math.floor(totalSeconds / (3600 * 24));
+            const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
+            const minutes = Math.floor((totalSeconds % 3600) / 60);
+            const seconds = totalSeconds % 60;
+            
+            document.getElementById('loveCounter').innerHTML = 
+                `${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos`;
+        }
+
+        // FUNÇÃO PARA TOCAR MÚSICA
+        function playHeartSound() {
+            const audio = new Audio('musica.mp3/Jorge & Mateus - Amo Noite e Dia  - [DVD Ao Vivo em Jurerê] - (Clipe Oficial).mp3');
+            audio.volume = 0.2;
+            audio.play().catch(e => console.log("Não foi possível tocar o som automaticamente"));
+        }
+
         // INICIALIZAÇÃO
         document.addEventListener('DOMContentLoaded', function() {
             // Personalizar conteúdo
@@ -693,9 +715,9 @@
                 year: 'numeric'
             });
             
-            // Atualizar contador de dias de amor
-            updateLoveDaysCounter();
-            setInterval(updateLoveDaysCounter, 86400000); // Atualiza a cada 24 horas
+            // Iniciar contador de amor
+            updateLoveTime();
+            setInterval(updateLoveTime, 1000);
             
             // Preencher razões para amar
             const reasonsList = document.getElementById('reasonsList');
@@ -715,7 +737,6 @@
                 document.getElementById('dynamicTitle').textContent = config.dynamicTitles[titleIndex];
                 titleIndex = (titleIndex + 1) % config.dynamicTitles.length;
             }, 3000);
-            
             // EVENT LISTENERS
             // Navegação entre páginas
             document.querySelectorAll('.nav-btn').forEach(btn => {
