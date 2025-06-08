@@ -168,6 +168,7 @@
             left: 100%;
         }
         
+        
         /* ESTILOS DAS PÁGINAS */
         .photo-frame {
             width: 250px;
@@ -489,10 +490,10 @@
     <div class="nav">
         <button class="nav-btn active" data-page="home">Início ❤️</button>
         <button class="nav-btn" data-page="memories">Nossa galeria fav 📸</button>
-        <button class="nav-btn" data-page="reasons">Por Que Te Amo 💖</button>
-        <button class="nav-btn" data-page="letter">Carta de Amor ✍️</button>
-        <button class="nav-btn" data-page="future">Nosso Futuro 🌟</button>
-        <button class="nav-btn" data-page="secret">Segredo 🤫</button>
+        <button class="nav-btn" data-page="reasons">motivos que me fazem amar você 💖</button>
+        <button class="nav-btn" data-page="letter">Declaraçãozinha...</button>
+        <button class="nav-btn" data-page="future">Oque eu planejo para nós </button>
+        <button class="nav-btn" data-page="secret">Meu segredinho.. 🤫</button>
     </div>
     
     <!-- PÁGINAS -->
@@ -504,7 +505,7 @@
             </div>
             
             <div class="message">
-                <p>Darquinha! <span id="herName">Darc</span>,</p>
+                 <span id="herName">Darc</span>,</p>
                 <p>Este site foi criado especialmente para você, para mostrar o quanto você significa para mim.</p>
                 <p>Cada detalhe aqui, foi pensado com muito carinho e amor, te amo demais! Espero que goste:)</p>
             </div>
@@ -648,21 +649,21 @@
     <script>
         // CONFIGURAÇÕES PERSONALIZÁVEIS
         const config = {
-            herName: "Darc Kaline",
+            herName: "Amor",
             yourName: "Kauã Seu Lindo",
             secretCode: "my black is cat",
             loveStartDate: "06/03/2023", // Data de início do relacionamento (06/03/2023)
             reasons: [
-                "Seu sorriso ilumina meu dia",
-                "Você me faz ser uma pessoa melhor",
-                "Sua companhia é meu lugar favorito",
-                "Seu coração é puro e bondoso",
-                "Você me entende como ninguém",
-                "Seu abraço é meu refúgio seguro",
+                "seu sorriso e sua generosidade é uma coisa linda.",
+                "Você me faz ser uma pessoa melhor a cada dia.",
+                "estar com você é meu lugar favorito",
+                "seu coração é puro e bondoso",
+                "o jeito que você trata sua familia e a todos, me fazem se apaixonar cada vez mais.",
+                "quando te abraço, me sinto mais leve e meu coração fica em paz",
                 "Você torna os dias comuns em especiais",
                 "Sua risada é a minha música favorita",
-                "Você me apoia em todos os momentos",
-                "Seu amor me dá força e inspiração"
+                "sempre estar comigo em todos os momento.",
+                "te amar é uma das coisa mais feliz da minha vida."
             ],
             dynamicTitles: [
                 "Para Você, Meu Amor",
@@ -790,7 +791,7 @@
                 }, 500);
                 
                 // Mostrar mensagem especial
-                alert(`Lembra deste dia, ${config.herName}? Foi a nossa "primeira foto"! ❤️`);
+                alert(`Lembra desse dia da quermesse, ${config.herName}? Foi a nossa "primeira foto"e primeiro dia dos namorado juntoos! ❤️`);
                 
                 // Criar corações
                 createHearts(15, this);
@@ -833,36 +834,55 @@
                 createHearts(8, this);
             });
             
-            // Botão para desbloquear segredo
-            document.getElementById('unlockBtn').addEventListener('click', function() {
-                const input = document.getElementById('secretCode');
-                if (input.value.toLowerCase() === config.secretCode) {
-                    document.getElementById('secretContent').style.display = 'block';
-                    input.style.borderColor = 'green';
-                    createFireworks(30);
-                } else {
-                    input.style.borderColor = 'red';
-                    alert('Tente novamente, amor! Dica: é meu apelido em Inglês favv ❤️');
-                }
-            });
-            
-            // Última surpresa (com música)
-            document.getElementById('finalSurpriseBtn')?.addEventListener('click', function() {
-                // Criar muitos corações
-                for (let i = 0; i < 50; i++) {
-                    setTimeout(() => {
-                        createHearts(5, this);
-                    }, i * 100);
-                }
-                
-                // Tocar música apenas aqui
-                playHeartSound();
-                
-                // Mostrar mensagem final
-                setTimeout(() => {
-                    alert(`Obrigado por ser você, ${config.herName}! Eu amo amar você! ❤️`);
-                }, 2000);
-            });
+           // Na parte do código do botão de desbloquear (dentro do DOMContentLoaded)
+document.getElementById('unlockBtn').addEventListener('click', function() {
+    const input = document.getElementById('secretCode');
+    if (input.value.toLowerCase() === config.secretCode) {
+        document.getElementById('secretContent').style.display = 'block';
+        input.style.borderColor = 'green';
+        createFireworks(30);
+        // Tocar música ao acertar a senha
+        playHeartSound();
+    } else {
+        input.style.borderColor = 'red';
+        alert('Tente novamente, amor! Dica: é meu apelido em Inglês favv ❤️');
+    }
+});
+
+// Substitua a função finalSurpriseBtn por esta:
+document.getElementById('finalSurpriseBtn')?.addEventListener('click', function() {
+    // Criar muitas rosas
+    for (let i = 0; i < 30; i++) {
+        setTimeout(() => {
+            createRose(this);
+        }, i * 300);
+    }
+    
+    // Mostrar mensagem final
+    setTimeout(() => {
+        alert(`Obrigado por ser você, ${config.herName}! Eu amo amar você! ❤️`);
+    }, 2000);
+});
+
+// Adicione esta nova função para criar rosas (coloque junto com as outras funções)
+function createRose(element) {
+    const rose = document.createElement('div');
+    rose.innerHTML = '🌹';
+    rose.style.position = 'absolute';
+    rose.style.fontSize = (Math.random() * 30 + 20) + 'px';
+    rose.style.left = Math.random() * window.innerWidth + 'px';
+    rose.style.top = Math.random() * window.innerHeight + 'px';
+    rose.style.animation = `float ${Math.random() * 3 + 2}s ease-in-out infinite`;
+    rose.style.zIndex = '1000';
+    rose.style.pointerEvents = 'none';
+    
+    document.body.appendChild(rose);
+    
+    setTimeout(() => {
+        rose.remove();
+    }, 5000);
+}
+
             
             // Efeito ao passar o mouse na foto principal
             document.getElementById('mainPhoto').addEventListener('mouseover', function() {
