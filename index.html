@@ -474,6 +474,33 @@
             .nav { flex-direction: column; align-items: center; }
             .nav-btn { width: 100%; margin-bottom: 5px; }
         }
+        /* Estilo melhorado para a caixa de senha */
+#secretCode {
+    padding: 12px 15px;
+    border: 2px solid var(--vermelho);
+    background-color: rgba(255, 0, 51, 0.1);
+    color: var(--branco);
+    border-radius: 25px;
+    margin: 10px auto;
+    width: 80%;
+    max-width: 300px;
+    font-size: 1rem;
+    text-align: center;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 0, 51, 0.2);
+}
+
+#secretCode:focus {
+    background-color: rgba(255, 0, 51, 0.2);
+    box-shadow: 0 0 15px var(--vermelho);
+    transform: scale(1.02);
+}
+
+#secretCode::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+    font-style: italic;
+}
     </style>
 </head>
 <body>
@@ -568,17 +595,18 @@
         <!-- PÁGINA DE CARTA DE AMOR -->
         <div class="page" id="letter">
             <div class="love-letter">
-                <h2>Minha Querida <span id="letterName">[Nome Dela]</span></h2>
+                <h2>mô<span id="letterName"></span></h2>
                 
-                <p>Não existem palavras suficientes para expressar o que sinto por você, mas vou tentar...</p>
+                <p>sabe que nunca fui bom com palavras, ne? kkkkkk</p>
                 
-                <p>Desde o momento em que te conheci, minha vida ganhou novas cores. Você transformou dias comuns em aventuras, sorrisos em risadas e momentos em memórias eternas.</p>
+                <p>desde que você entrou em minha vida, mudou. eu era desajeitado, n era tao esforçado, mas vc me deu um impulso, desde o começo, eu sabia que era você.</p>
+                  <p>quando estou mal, seu abraço é meu refugio, um sentimento que nunca mais achei que ia ter, eu encontrei em você, eu sinto renovado com você ao meu lado, minha familia te ama, meu irmão ama você e minha mãe te amaria. tenho certeza.</p>
+
+                <p>obrigado por tanto, mô! obrigado por ser você, te amar é algo lindo, Deus tem propósito maravilhoso para você e para nosso relacionamento. eu me espelho em você, e sabe disso, vou sempre estar contigo, em todos momentos da sua vida.</p>
+
+                <p>e te apoiar em todos os seus sonhos e fazer de a cada dia ao seu lado uma nova razão para te amar ainda mais.</p>
                 
-                <p>Seu amor me dá força quando estou fraco, me dá luz quando está escuro e me dá alegria mesmo nos dias mais cinzentos. Você é minha melhor amiga, minha paixão, meu tudo.</p>
-                
-                <p>Prometo estar ao seu lado nos bons e maus momentos, te apoiar em todos os seus sonhos e fazer de cada dia ao seu lado uma nova razão para te amar ainda mais.</p>
-                
-                <p>Com todo o meu amor,</p>
+                <p>Com todo o meu amor, Kauã!:)</p>
                 <p style="font-family: 'Dancing Script', cursive; font-size: 1.5rem; margin-top: 20px; color: var(--vermelho);">Seu <span id="yourName">[Seu Nome]</span></p>
             </div>
         </div>
@@ -588,17 +616,20 @@
             <h2 style="color: var(--vermelho); text-align: center; margin: 20px 0; font-family: 'Dancing Script', cursive; font-size: 2.5rem;">Nosso Futuro Juntos</h2>
             
             <div class="message">
-                <p>Sonhar com você é meu passatempo favorito. Aqui estão algumas coisas que espero que vivamos juntos:</p>
+                <p> aqui estão algumas coisas que espero que vivamos juntos:)❤️</p>
             </div>
             
             <div class="interactive-box">
-                <h3 style="color: var(--vermelho); margin-bottom: 15px;">Nossos Planos</h3>
+                <h3 style="color: var(--vermelho); margin-bottom: 15px;">Plano que quero para nós</h3>
                 <ul id="futureList" style="list-style-type: none;">
-                    <li>✅ Viajar pelo mundo juntos</li>
-                    <li>✅ Construir um lar cheio de amor</li>
-                    <li>✅ Criar tradições só nossas</li>
-                    <li>✅ Envelhecer juntos, sempre apaixonados</li>
-                    <li>✅ Realizar todos os seus sonhos</li>
+                    <li>Conhecer outros paises(canada) top one</li>
+                    <li> Construir um lar cheio de amor e Fé</li>
+                    <li> Casar e criar nossa familia.</li>
+                    <li> Realizar todos os seus sonhos, inclusive levar no show de billie</li>
+                    <li>te dar as melhores pulseiras e perfume.</li>
+                    <li> Te levar no macaranã</li>
+                    <li>Comprar nossa casa em Maceio.</li>
+                    <li>Cuidar de você</li>
                 </ul>
             </div>
             
@@ -607,38 +638,38 @@
             </div>
         </div>
         
-        <!-- PÁGINA SECRETA -->
-        <div class="page" id="secret">
-            <div style="text-align: center; margin: 50px 0;">
-                <h2 style="color: var(--vermelho); font-family: 'Dancing Script', cursive; font-size: 2.5rem;">Esta Página é Só Para Você</h2>
-                <p style="margin: 20px 0;">Digite nossa palavra especial:</p>
-                <input type="password" id="secretCode" style="padding: 10px; border: 2px solid var(--vermelho); background-color: var(--preto-claro); color: white; border-radius: 5px; margin-bottom: 20px;">
-                <button class="btn" id="unlockBtn">Desbloquear</button>
+          <!-- PÁGINA SECRETA - MODIFICADA -->
+    <div class="page" id="secret">
+        <div style="text-align: center; margin: 30px 0;">
+            <h2>quero ver a madame descobrir</h2>
+            <p style="margin: 15px 0;">Digite o meu apelido carinhosoo:</p>
+            <input type="password" id="secretCode" placeholder="Tente acertarrr">
+            <button class="btn" id="unlockBtn">Desbloquear</button>
+        </div>
+        
+        <div id="secretContent" style="display: none;">
+            <div class="love-letter">
+                <h2>Descobriu meu segredinhooo</h2>
+                <p>"Passa o dia, passa a noite, tô apaixonado
+                 Coração no peito sofre sem você do lado
+                 E dessa vez tudo é real, nada de fantasia
+                 Saiba que eu te amo, amo noite e dia"</p>
+                <p>Te amo, MINHA VIDA! EU TE AMO NOITE E DIA! </p>
             </div>
             
-            <div id="secretContent" style="display: none;">
-                <div class="love-letter">
-                    <h2>Descobriu meu segredinhooo</h2>
-                    <p>"Passa o dia, passa a noite, tô apaixonado
-                     Coração no peito sofre sem você do lado
-                     E dessa vez tudo é real, nada de fantasia
-                     Saiba que eu te amo, amo noite e dia"</p>
-                    <p>Te amo, MINHA VIDA! EU TE AMO NOITE E DIA! </p>
-                    <div id="flowerBouquet" class="hidden bouquet-animation">
-                        <img src="img/foto.jpeg" alt="Buquê Romântico" class="bouquet-img">
-                    </div>
-                </div>
-                <div id="flowerBouquet" class="hidden bouquet-animation">
-                    <img src="img/buque.png" alt="Buquê Romântico" class="bouquet-img">
-                </div>
-
-                <div style="text-align: center; margin: 30px 0;">
-                    <button class="btn" id="finalSurpriseBtn">Última Surpresa</button>
-                </div>
+            <!-- Container do buquê especial (oculto inicialmente) -->
+            <div id="specialBouquet" class="hidden" style="text-align: center; margin: 20px 0;">
+                <h3 style="color: var(--vermelho); margin-bottom: 15px;">Seu buquê especialll</h3>
+                <!-- SUBSTITUA AQUI O CAMINHO DA SUA IMAGEM -->
+                <img src="img/rosa.jpg" alt="Buquê Especial" class="bouquet-img">
+            </div>
+            
+            <div style="text-align: center; margin: 20px 0;">
+                <button class="btn" id="finalSurpriseBtn">Última Surpresa</button>
             </div>
         </div>
     </div>
-    
+
     <!-- FOOTER -->
     <div class="footer">
         <p>Feito com <span class="footer-heart">❤️</span> por <span id="footerName">Kauã</span></p>
@@ -650,8 +681,8 @@
         // CONFIGURAÇÕES PERSONALIZÁVEIS
         const config = {
             herName: "Amor",
-            yourName: "Kauã Seu Lindo",
-            secretCode: "my black is cat",
+            yourName: "branquelo sem sal",
+            secretCode: "myblackiscat",
             loveStartDate: "06/03/2023", // Data de início do relacionamento (06/03/2023)
             reasons: [
                 "seu sorriso e sua generosidade é uma coisa linda.",
@@ -845,44 +876,46 @@ document.getElementById('unlockBtn').addEventListener('click', function() {
         playHeartSound();
     } else {
         input.style.borderColor = 'red';
-        alert('Tente novamente, amor! Dica: é meu apelido em Inglês favv ❤️');
+        alert('Tente novamente, amor! Dica: é meu apelido em Inglês favv(tudo juntooo) ❤️');
     }
 });
 
-// Substitua a função finalSurpriseBtn por esta:
-document.getElementById('finalSurpriseBtn')?.addEventListener('click', function() {
-    // Criar muitas rosas
-    for (let i = 0; i < 30; i++) {
-        setTimeout(() => {
-            createRose(this);
-        }, i * 300);
-    }
-    
-    // Mostrar mensagem final
-    setTimeout(() => {
-        alert(`Obrigado por ser você, ${config.herName}! Eu amo amar você! ❤️`);
-    }, 2000);
-});
+   // Botão de surpresa final
+        document.getElementById('finalSurpriseBtn').addEventListener('click', function() {
+            // Mostra o buquê especial
+            document.getElementById('specialBouquet').classList.remove('hidden');
+            
+            // Cria rosas animadas
+            for (let i = 0; i < 25; i++) {
+                setTimeout(() => {
+                    createRose(this);
+                }, i * 200);
+            }
+            
+            // Mostra mensagem final
+            setTimeout(() => {
+                alert(`Essas rosas são para você, ${config.herName}! não pude te dar pessoalmente, então faço questão te dar da forma que posso! meu amor. ❤️`);
+            }, 1500);
+        });
 
-// Adicione esta nova função para criar rosas (coloque junto com as outras funções)
-function createRose(element) {
-    const rose = document.createElement('div');
-    rose.innerHTML = '🌹';
-    rose.style.position = 'absolute';
-    rose.style.fontSize = (Math.random() * 30 + 20) + 'px';
-    rose.style.left = Math.random() * window.innerWidth + 'px';
-    rose.style.top = Math.random() * window.innerHeight + 'px';
-    rose.style.animation = `float ${Math.random() * 3 + 2}s ease-in-out infinite`;
-    rose.style.zIndex = '1000';
-    rose.style.pointerEvents = 'none';
-    
-    document.body.appendChild(rose);
-    
-    setTimeout(() => {
-        rose.remove();
-    }, 5000);
-}
-
+        // Função para criar rosas (certifique-se que está no seu código)
+        function createRose(element) {
+            const rose = document.createElement('div');
+            rose.innerHTML = '🌹';
+            rose.style.position = 'absolute';
+            rose.style.fontSize = (Math.random() * 25 + 15) + 'px';
+            rose.style.left = Math.random() * window.innerWidth + 'px';
+            rose.style.top = '-50px';
+            rose.style.animation = `float ${Math.random() * 3 + 2}s ease-in forwards`;
+            rose.style.zIndex = '1000';
+            rose.style.pointerEvents = 'none';
+            
+            document.body.appendChild(rose);
+            
+            setTimeout(() => {
+                rose.remove();
+            }, 5000);
+        }
             
             // Efeito ao passar o mouse na foto principal
             document.getElementById('mainPhoto').addEventListener('mouseover', function() {
